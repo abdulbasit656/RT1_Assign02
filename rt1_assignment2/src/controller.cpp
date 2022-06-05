@@ -2,20 +2,21 @@
 #include "geometry_msgs/Twist.h"
 #include "sensor_msgs/LaserScan.h"
 #include "rt1_assignment2/Teleop_Robot.h"
-#include "rt1_assignment2/Vel.h"
  
 ros::Publisher pub;
-//ros::Publisher pub2;
 ros::Subscriber sub;
 ros::ServiceServer service;
 
-float linear_vel = 5.0;
+float linear_vel = 5.0;		//initial linear velocy of robot
+
+/*------callback function is used to get the laserscanner data and 
+	publish the velocity according to the given conditions-----*/
 
 void Callback(const sensor_msgs::LaserScan::ConstPtr& msg)
 {
-	float range_right = msg->ranges[0];
-	float range_center = msg->ranges[360];
-	float range_left = msg->ranges[720];
+	float range_right = msg->ranges[0];		//index [0] has the right most value of laser scanner at 0 degree
+	float range_center = msg->ranges[360];	//index [360] has the front value of laser scanner at 90 degree	
+	float range_left = msg->ranges[720];		//index [720] has the right most value of laser scanner at 180 degree
 	
 	ROS_INFO("Range Ahead = %0.2f, Range Left = %0.2f, Range Right = %0.2f", range_center, range_left, range_right);
 	
@@ -49,6 +50,8 @@ void Callback(const sensor_msgs::LaserScan::ConstPtr& msg)
 	
 }
 
+/*------teleop_callback function is used to get the commands from user_control node and 
+	increase/decrease the velocity of the robot-----*/
 bool teleop_callback(rt1_assignment2::Teleop_Robot::Request &req, rt1_assignment2::Teleop_Robot::Response &res)
 {	
 	if(req.command=='i')

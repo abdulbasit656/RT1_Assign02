@@ -1,0 +1,16 @@
+To run nodes one by one
+
+	roscore
+	rosrun stage_ros stageros src/rt1_assignment2/world/my_world.world
+	rosrun rt1_assignment2 robot_control
+	rosrun rt1_assignment2 user_control 
+
+To run multiple of Nodes using Roslaunch:
+
+	roslaunch rt1_assignment2 run.launch
+	rosrun rt1_assignment2 user_control
+
+In user_control terminal
+	for speed up press: 'i'
+	for speed down press: 'k'
+	to get back to initial position press: 's'
