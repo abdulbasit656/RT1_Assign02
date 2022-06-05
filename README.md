@@ -74,7 +74,8 @@ Here's a list of commands (e.g. keyboard keys) the user can use to control the r
     s: resets the position of the robot.
 
 ### Flowchart
-![Assign02](https://user-images.githubusercontent.com/17598805/172031571-cb2e0ad4-4265-45aa-9881-e623d1c64e92.png)
+![Assign02](https://user-images.githubusercontent.com/17598805/172031603-65050cda-b402-48d1-b3e0-bc5262c1fde8.png)
+
 
 ### Short video
 
