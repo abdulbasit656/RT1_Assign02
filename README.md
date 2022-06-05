@@ -73,6 +73,9 @@ Here's a list of commands (e.g. keyboard keys) the user can use to control the r
     k: decreases the speed of the robot, every time 'k' key is pressed the velocity is decreased by current_vel*0.1;
     s: resets the position of the robot.
 
+### Flowchart
+![Assign02](https://user-images.githubusercontent.com/17598805/172031571-cb2e0ad4-4265-45aa-9881-e623d1c64e92.png)
+
 ### Short video
 
 _________
